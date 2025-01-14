@@ -1,0 +1,7 @@
+{
+  "name": "santiSeminario",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
