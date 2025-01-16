@@ -7,13 +7,18 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';//IMPORTAMOS EL CUSTOM OARA QUE NOO NOS DE ERROR EL
+import { IonicStorageModule } from '@ionic/storage-angular';//imoportamos 
+
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule,
+     IonicModule.forRoot(), 
+     AppRoutingModule,
+    IonicStorageModule.forRoot()//anadimos el modulo de storage
+    ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]// ANADIMOS EL CUSTOM-ELEMT-SCHEMA
+ 
 })
 export class AppModule {}
