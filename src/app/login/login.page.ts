@@ -5,6 +5,7 @@ import { FormControl, FormBuilder, FormGroup, Validators, RequiredValidator} fro
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
+  standalone:false
 })
 export class LoginPage implements OnInit {
  loginForm: FormGroup;
@@ -14,7 +15,11 @@ email: [
 
   { type: 'required', message: 'El correo es obligatorio'},
   { type: 'email', message: 'el correo no es valido'}
-]
+],
+password: [
+  { type: 'required', message: 'La contraseña es obligatoria.' },
+  { type: 'minlength', message: 'La contraseña debe tener al menos 6 caracteres.' },
+],
 
  }
   constructor(
