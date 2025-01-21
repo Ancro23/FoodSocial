@@ -38,7 +38,11 @@
         </ion-label>
       </ng-container>
     </div>
-    <ion-button type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+    <ion-button type="submit"
+    [disabled]="!loginForm.valid"
+     >Login
+    </ion-button>
   </form>
+  <p>{{errorMessage}}</p>
 </ion-content>
 
