@@ -59,4 +59,8 @@ password: [
   });
 
 }
+goToRegister() {
+  this.navCtrl.navigateForward('/register');
 }
+}
+
