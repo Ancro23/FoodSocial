@@ -1,0 +1,22 @@
+<ion-split-pane>
+  <ion-menu contentId="content">
+<ion-header>
+  <ion-toolbar>
+<ion-title>menu</ion-title>
+<ion-buttons slot="end">
+  <ion-button (click)="closemenu()">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
+</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item (click)="log_out()">
+    <ion-icon name="log-out-outline"></ion-icon>Salir
+  </ion-item>
+  <!--Contenido de mi menu-->
+  
+</ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content"></ion-router-outlet>
+</ion-split-pane>

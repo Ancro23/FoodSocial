@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators, RequiredValidator} from '@angular/forms'
+import { AuthService } from '../services/auth.service';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -36,7 +38,9 @@ formErrors = {
 };
 
   constructor( 
-private formBuielder: FormBuilder
+private formBuielder: FormBuilder,
+private authServices: AuthService,
+private navCtrl:NavController
 
 ){
   this.registerForm = this.formBuielder.group({
@@ -62,8 +66,14 @@ private formBuielder: FormBuilder
   ngOnInit() {
   }
   registerUser(registerData: any) {
-    console.log( registerData,"Registro exitoso:");
-    
+    this.authServices.register(registerData).then(res =>{
+      console.log(res);
+      this.errorMessage ='';
+      this.navCtrl.navigateForward('/login');
+    }).catch(err => {
+      console.log(err);
+    this.errorMessage = this.errorMessage;
+  })
   }
 
   private mustMatch(controlName: string, matchingControlName: string) {
