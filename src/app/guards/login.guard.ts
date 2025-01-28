@@ -12,8 +12,10 @@ export class LoginGuard implements CanActivate{
   async canActivate(){
     const isUserLoggedIn = await this.storage.get('isUserLoggedIn');
     if (isUserLoggedIn){
+      console.log('puedo entrar');
       return true;
     }else{
+      console.log('no puedo entrar');
       this.navCtrl.navigateRoot('/login');
       return false;
 }

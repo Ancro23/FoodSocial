@@ -13,10 +13,13 @@ export class IntroGuard implements CanActivate{
   async canActivate(){
     const isIntroShowed = await this.storage.get('vilaIntro');
     if (isIntroShowed){
+      console.log('vilaIntro');
       return true;
+
     }else{
       this.router.navigateByUrl('/intro');
       return false;
     }
   }
  }
+ 

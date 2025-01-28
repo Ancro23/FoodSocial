@@ -20,12 +20,12 @@ export class AuthService {
   }
 }
 this.http.post(`${this.urlServer}/login`,params, this.httpHeaders).subscribe(
-      (Data: any)=>{
-        console.log(Data);
-        if(Data.status == 'ok'){
-          accept(Data);
+      (data: any)=>{
+        console.log(data);
+        if(data.status == 'OK'){
+          accept(data);
         }else{
-          reject(Data.errors)
+          reject(data.errors)
         }
       },
       (error) => {
@@ -53,10 +53,10 @@ register(data:any){
       "username": data.username
     }
   }
- this.http.post(`${this.urlServer}/sigup`,params, this.httpHeaders).subscribe(
+ this.http.post(`${this.urlServer}/signup`,params, this.httpHeaders).subscribe(
       (Data: any)=>{
         console.log(Data);
-        if(Data.status == 'ok'){
+        if(Data.status == 'OK'){
           accept(Data);
         }else{
           reject(Data.errors)

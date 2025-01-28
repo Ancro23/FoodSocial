@@ -22,7 +22,7 @@ export class IntroPage implements OnInit {
 finish(){
   console.log('finish');
 this.storage.set('viLaIntro', true); // GUARDAMOS EN EL STORAGE QUE YA SE HA MOSTRADO LA INTRODUCCIÓN
-this.router.navigateByUrl('/home');//redireccionamos a la pagina
+this.router.navigateByUrl('/login');//redireccionamos a la pagina
 
 }
 }

@@ -48,9 +48,11 @@ password: [
   ngOnInit() {
   }
   loginUser(credentials:any){
-    this.authService.login(credentials).then(res => {
+    this.authService.login(credentials).then((res: any) => {
       console.log(res);
+      
       this.errorMessage= '';
+      this.Storage.set('user', res.user);
       this.Storage.set('isUserLoggedIn', true);
       this.navCtrl.navigateForward('/menu/home');
   }).catch(err => {
@@ -63,4 +65,5 @@ goToRegister() {
   this.navCtrl.navigateForward('/register');
 }
 }
+
 
