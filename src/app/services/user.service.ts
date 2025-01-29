@@ -12,7 +12,7 @@ export class UserService {
 
 getUser(id:any){
   return new Promise((accept,reject) =>{
-    this.http.get(`${this.urlServer}/users/$(id)`, this.httpHeaders).subscribe(
+    this.http.get(`${this.urlServer}/current_user/${id}`, this.httpHeaders).subscribe(
       (Data: any)=>{
           accept(Data);
       },
@@ -27,7 +27,23 @@ getUser(id:any){
     )
 });
 }
+updateUser(user: any){
+  const user_params = {user:user}
+  return new Promise((accept,reject) =>{
+    this.http.post(`${this.urlServer}/update/${user.id}`,user_params, this.httpHeaders).subscribe(
+      (Data: any)=>{
+          accept(Data);
+      },
+      (error) => {
+        console.log(error,'error');
+        if (error.status == 500){
+          reject('error porfavor intentar mas tarde');
+        }else{
+          reject('error al actualizar el usuario');
+        }
 }
+    )
+});
 
-
-
+}
+}

@@ -18,3 +18,9 @@ swiper-slide {
   width: 30px;
   height: 30px;
 }
+ion-fab{
+  ion-fab-button{
+    --background: white ;
+    --color: black;
+  }
+}
