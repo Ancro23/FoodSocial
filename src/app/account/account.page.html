@@ -1,20 +1,41 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons>
-        <ion-menu-button>
-
-        </ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-</ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="!isEditing" (click)="editProfile()">Editar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content >
- <ion-title>{{user_data.name}} {{user_data.last_name}}</ion-title>
- 
- <ion-avatar (click)="takePhoto()">
-  <img src="{{user_data.image ? user_data.image : 'assets/images/default-avatar.png'}}" class ="image-post">
- </ion-avatar>
- <p>Usuario: {{user_data.username}}</p>
- <p>Seguidores:{{user_data.followed_users.length}}</p>
- <p>Seguiendo:{{user_data.following_users.length}}</p>
+<ion-content>
+  <div class="profile-container">
+    <ion-avatar (click)="takePhoto()">
+      <img [src]="user_data.image ? user_data.image : 'assets/images/default-avatar.png'" class="image-post">
+    </ion-avatar>
+
+    <div *ngIf="!isEditing">
+      <h1>{{ user_data.name }} {{ user_data.last_name }}</h1>
+      <p>Usuario: {{ user_data.username }}</p>
+      <p>Seguidores: {{ user_data.followed_users.length }}</p>
+      <p>Siguiendo: {{ user_data.following_users.length }}</p>
+    </div>
+
+
+    <form *ngIf="isEditing" [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input formControlName="last_name"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" [disabled]="!profileForm.valid">Guardar</ion-button>
+      <ion-button expand="full" color="medium" (click)="cancelEdit()">Cancelar</ion-button>
+    </form>
+  </div>
 </ion-content>

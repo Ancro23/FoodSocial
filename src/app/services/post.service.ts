@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HomePageRoutingModule } from '../home/home-routing.module';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,9 +12,9 @@ export class PostService {
     private http: HttpClient
   ) { }
 
-  getPosts() {
+  getPosts(page:number, perPage: number) {
     return new Promise((accept, reject) => {
-      this.http.get(`${this.urlServer}/posts`, this.httpHeaders).subscribe(
+      this.http.get(`${this.urlServer}/posts?page=${page}&per_page=${perPage}`, this.httpHeaders).subscribe(
         (Data: any) => {
 
 
