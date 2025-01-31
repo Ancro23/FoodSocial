@@ -11,15 +11,15 @@
 
 <ion-content>
   <div class="profile-container">
-    <ion-avatar (click)="takePhoto()">
+    <ion-avatar (click)="presentPhotoOptions()">
       <img [src]="user_data.image ? user_data.image : 'assets/images/default-avatar.png'" class="image-post">
     </ion-avatar>
 
     <div *ngIf="!isEditing">
       <h1>{{ user_data.name }} {{ user_data.last_name }}</h1>
       <p>Usuario: {{ user_data.username }}</p>
-      <p>Seguidores: {{ user_data.followed_users.length }}</p>
-      <p>Siguiendo: {{ user_data.following_users.length }}</p>
+      <p>Seguidores: {{ user_data.followees.length  }}</p>
+      <p>Siguiendo: {{ user_data.followers.length  }}</p>
     </div>
 
 

@@ -62,7 +62,15 @@ this.addPostForm.patchValue({
     this.postService.createPost(post_param).then(
       (data:any) => {
          console.log(data,'post creado');
-this.modalController.dismiss({null: null});
+data.user = {
+id: user.id,
+name: user.name,
+image: user.image || 'assets/image/defaul/avatar.png'
+};
+this.postService.postCreate.emit(data);
+this.addPostForm.reset();
+this.post_image = null;
+this.modalController.dismiss();
       },
         (error) =>{
           console.log(error,'error');

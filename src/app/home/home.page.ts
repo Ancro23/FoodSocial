@@ -13,6 +13,7 @@ posts:any[] =[];
 page:number =1;
 limit:number = 10;
 hasMore : boolean = true;
+isLoading:boolean=false;
   constructor(
     private postService:PostService,
     private modalController:ModalController
@@ -21,6 +22,9 @@ hasMore : boolean = true;
 ngOnInit(){
   console.log('limit home');
   this.loadPosts();
+  this.postService.postCreate.subscribe((newPost:any) =>{
+    this.posts.unshift(newPost);
+  })
  
 }
  async addPost(){
@@ -33,6 +37,8 @@ ngOnInit(){
   return await modal.present();
 }
 loadPosts(event?: any){
+  this.isLoading = true;
+
   this.postService.getPosts(this.page,this.limit).then(
     (data: any) =>{
     if(data.length > 0){
@@ -42,12 +48,14 @@ loadPosts(event?: any){
     }else{
       this.hasMore = false;
     }
+    this.isLoading = false;
 if(event){
   event.target.complete();
 }
   },
   (error)=>{
     console.log(error);
+    this.isLoading = false;
     if (event){
       event.target.complete();
     }

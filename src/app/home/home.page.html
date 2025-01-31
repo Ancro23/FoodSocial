@@ -9,6 +9,7 @@
 </ion-header>
 <ion-content>
     <ion-list>
+        <ion-spinner name="dots" *ngIf="isLoading"></ion-spinner>
         <ion-card *ngFor="let post of posts">
             <img
                 src="{{post.image}}"/>

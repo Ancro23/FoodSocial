@@ -5,7 +5,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
-
+import { AlertController } from '@ionic/angular';
 defineCustomElements(window);
 
 @Component({
@@ -20,8 +20,8 @@ export class AccountPage implements OnInit {
     last_name: '',
     email: '',
     image: '',
-    followed_users: [],
-    following_users: []
+    followees: [],
+    followers: []
   };
 
   isEditing = false;
@@ -31,7 +31,8 @@ export class AccountPage implements OnInit {
     private userService: UserService,
     private storage: Storage,
     private formBuilder: FormBuilder,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    public alertController: AlertController
   ) {
     this.profileForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -90,11 +91,11 @@ export class AccountPage implements OnInit {
     });
   }
 
-  async takePhoto() {
+  async takePhoto(source: CameraSource) {
     console.log('take Photo');
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.DataUrl,
-      source: CameraSource.Camera,
+      source: source,
       quality: 100
     });
 
@@ -110,4 +111,33 @@ export class AccountPage implements OnInit {
     });
     toast.present();
   }
+  async presentPhotoOptions(){
+    const alert = await this.alertController.create({
+      header: "Seleccionar una opcion",
+      message:"¿De donde Desea obtener la imagen",
+      buttons:[
+        {
+          text:"camera",
+          handler:() => {
+            this.takePhoto(CameraSource.Camera);
+          }
+        },
+        {
+          text:"Galeria",
+          handler: () => {
+            this.takePhoto(CameraSource.Photos);
+          }
+        },
+        {
+          text:"Cancelar",
+          role:"cancel",
+          handler:() => {
+            console.log('Cancelado');
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+  
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable,EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HomePageRoutingModule } from '../home/home-routing.module';
 @Injectable({
@@ -7,7 +7,7 @@ import { HomePageRoutingModule } from '../home/home-routing.module';
 export class PostService {
   urlServer = 'http://51.79.26.171';
   httpHeaders = { headers: new HttpHeaders({ 'content-Type': 'application/json' }) };
-
+postCreate:EventEmitter<any> = new EventEmitter();
   constructor(
     private http: HttpClient
   ) { }
@@ -38,6 +38,7 @@ export class PostService {
         this.http.post(`${this.urlServer}/posts`,post_data, this.httpHeaders).subscribe(
           (Data: any) => {
             accept(Data);
+            this.postCreate.emit(Data);
           },
           (error) => {
             console.log(error, 'error');
