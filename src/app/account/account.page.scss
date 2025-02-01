@@ -1,6 +1,6 @@
-/* Estilos generales */
+
 ion-content {
-    --background: #0b0b0f; /* Fondo oscuro */
+    --background: #0b0b0f; 
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@ ion-content {
     box-shadow: 0px 0px 20px #ff00ff;
   }
   
-  /* Avatar */
+ 
   ion-avatar {
     width: 120px;
     height: 120px;
@@ -54,7 +54,7 @@ ion-content {
     border-radius: 50%;
   }
   
-  /* Información del usuario */
+ 
   h1 {
     font-size: 22px;
     color: #00ffea;
@@ -67,7 +67,6 @@ ion-content {
     margin: 5px 0;
   }
   
-  /* Botones */
   ion-button {
     --background: linear-gradient(90deg, #00ffea, #ff00ff);
     --color: white;
@@ -80,7 +79,7 @@ ion-content {
     box-shadow: 0px 0px 20px #ff00ff;
   }
   
-  /* Formulario de edición */
+
   form {
     margin-top: 20px;
   }
@@ -92,7 +91,7 @@ ion-content {
     margin: 10px 0;
   }
   
-  /* Botón de cancelar */
+ 
   ion-button[color="medium"] {
     --background: #444;
     --color: white;

@@ -1,7 +1,7 @@
-/* Estilo general */
+
 ion-content {
-    --background: #0d0d0d; /* Fondo oscuro */
-    color: #ffffff; /* Texto blanco */
+    --background: #0d0d0d; 
+    color: #ffffff; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,14 +9,14 @@ ion-content {
     padding: 20px;
   }
   
-  /* Estilo para la barra de herramientas */
+ 
   ion-toolbar {
     --background: #1a1a2e;
-    --color: #00ffea; /* Color cian neón */
+    --color: #00ffea; 
     text-align: center;
   }
   
-  /* Avatar */
+ 
   ion-avatar {
     width: 100px;
     height: 100px;
@@ -29,7 +29,7 @@ ion-content {
     border-radius: 50%;
   }
   
-  /* Formulario */
+ 
   form {
     width: 100%;
     max-width: 400px;
@@ -40,7 +40,6 @@ ion-content {
     backdrop-filter: blur(10px);
   }
   
-  /* Campos de entrada */
   ion-item {
     --background: transparent;
     --color: white;
@@ -48,7 +47,7 @@ ion-content {
     margin-bottom: 15px;
   }
   
-  /* Estilos para las etiquetas flotantes */
+
   ion-input {
     --placeholder-color: rgba(255, 255, 255, 0.6);
     --color: white;
@@ -58,7 +57,6 @@ ion-content {
     font-size: 16px;
   }
   
-  /* Botón de Login */
   ion-button[type="submit"] {
     width: 100%;
     margin-top: 10px;
@@ -77,7 +75,6 @@ ion-content {
     box-shadow: 0 0 20px #ff00ff;
   }
   
-  /* Botón de Registro */
   ion-button[color="secondary"] {
     width: 100%;
     margin-top: 10px;
@@ -96,14 +93,14 @@ ion-content {
     box-shadow: 0 0 20px #00ffea;
   }
   
-  /* Mensajes de error */
+
   ion-label[color="danger"] {
     font-size: 14px;
     color: #ff4444;
     text-shadow: 0 0 5px red;
   }
   
-  /* Mensaje de error general */
+ 
   p {
     color: #ff4444;
     font-size: 14px;

@@ -2,15 +2,15 @@
 *{
     background-color: #000000;
 }
-/* Estilo general del contenido */
+
 ion-content {
-    --background: #111; /* Fondo oscuro */
+    --background: #111; 
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 15px;
   }
   
-  /* Estilo del encabezado */
+ 
   ion-toolbar {
     --background: rgb(0, 0, 0);
     --color: rgb(255, 255, 255);
@@ -19,7 +19,7 @@ ion-content {
     text-align: center;
   }
   
-  /* Imagen de subida */
+ 
   div {
     background: rgba(0, 0, 0, 0.1);
     border: 2px dashed #000000;
@@ -34,7 +34,6 @@ ion-content {
     transform: scale(1.05);
   }
   
-  /* Placeholder de imagen */
   img {
     width: 100%;
     max-width: 250px;
@@ -42,14 +41,13 @@ ion-content {
     margin-bottom: 10px;
   }
   
-  /* Texto bajo la imagen */
   p {
     font-size: 16px;
     color: #00ffea;
     font-style: italic;
   }
   
-  /* Estilos del textarea */
+  
   ion-textarea {
     --background: rgb(0, 0, 0);
     --color: rgb(255, 255, 255);
@@ -59,7 +57,7 @@ ion-content {
     width: 900px;
   }
   
-  /* Botones */
+
   ion-button {
     --background: #00ffea;
     --color: #111;
@@ -74,7 +72,7 @@ ion-content {
     transform: scale(1.05);
   }
   
-  /* Botón de cerrar */
+  
   ion-button:nth-child(2) {
     --background: #ff4d4d;
   }

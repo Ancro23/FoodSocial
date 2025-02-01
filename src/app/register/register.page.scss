@@ -1,4 +1,4 @@
-/* Fondo oscuro con un toque neón */
+
 ion-content {
     --background: #0b0b0f;
     color: white;
@@ -11,14 +11,14 @@ ion-content {
    --color: #00ffea;
   }
   
-  /* Estilos para el toolbar */
+ 
   ion-toolbar {
     --background: rgb(0, 0, 0);
     border-bottom: 2px solid #ff00ff;
     text-align: center;
   }
   
-  /* Input fields */
+ 
   ion-item {
     --background: rgb(0, 0, 0);
     border-radius: 10px;
@@ -32,7 +32,7 @@ ion-content {
     box-shadow: 0px 0px 15px #000000;
   }
   
-  /* Labels y placeholders */
+  
   ion-label {
     color: #ff00ff;
     font-weight: bold;
@@ -43,13 +43,13 @@ ion-content {
     --placeholder-color: #888;
   }
   
-  /* Mensajes de error */
+
   ion-label[color="danger"] {
     color: #ff4d4d;
     font-size: 12px;
   }
   
-  /* Botón de registro */
+ 
   ion-button {
     --background: linear-gradient(90deg, #ff00ff, #00ffea);
     --color: white;
@@ -63,7 +63,7 @@ ion-content {
     box-shadow: 0px 0px 15px #00ffea;
   }
   
-  /* Botón de cerrar */
+ 
   ion-button[color="medium"] {
     --background: rgba(255, 255, 255, 0.2);
     --color: white;
@@ -73,7 +73,7 @@ ion-content {
     background: rgba(0, 0, 0, 0.4);
   }
   
-  /* Footer */
+  
   ion-footer {
     margin-top: 20px;
     text-align: center;

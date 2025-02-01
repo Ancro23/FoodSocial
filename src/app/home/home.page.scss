@@ -1,6 +1,6 @@
-/* Estilo general */
+
 ion-content {
-  --background: #0b0b0f; /* Fondo oscuro */
+  --background: #0b0b0f; 
   color: white;
   padding: 15px;
   display: flex;
@@ -8,21 +8,21 @@ ion-content {
   align-items: center;
 }
 
-/* Estilo para la barra de herramientas */
+
 ion-toolbar {
   --background: #1a1a2e;
   --color: #00ffea;
   border-bottom: 2px solid #00ffea;
 }
 
-/* Spinner de carga */
+
 ion-spinner {
   margin: 20px auto;
   display: block;
   --color: #ff00ff;
 }
 
-/* Tarjetas de publicaciones */
+
 ion-card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
@@ -38,14 +38,13 @@ ion-card:hover {
   box-shadow: 0px 0px 20px #ff00ff;
 }
 
-/* Imagen dentro de la tarjeta */
+
 ion-card img {
   width: 100%;
   height: auto;
   border-bottom: 2px solid #00ffea;
 }
 
-/* Encabezado de la tarjeta */
 ion-card-header {
   padding: 10px;
   display: flex;
@@ -54,7 +53,7 @@ ion-card-header {
   color: #ffffff;
 }
 
-/* Avatar del usuario */
+
 .user-avatar {
   width: 40px;
   height: 40px;
@@ -70,7 +69,6 @@ ion-card-header {
   border-radius: 50%;
 }
 
-/* Subtítulo con nombre del usuario */
 ion-card-subtitle {
   font-size: 14px;
   color: #00ffea;
@@ -79,20 +77,18 @@ ion-card-subtitle {
   gap: 10px;
 }
 
-/* Contenido de la tarjeta */
+
 ion-card-content {
   padding: 10px;
   font-size: 16px;
   color: #000000;
 }
 
-/* Infinite Scroll */
 ion-infinite-scroll-content {
   --color: #00ffea;
   text-align: center;
 }
 
-/* Botón flotante para agregar publicaciones */
 ion-fab-button {
   --background: linear-gradient(90deg, #00ffea, #ff00ff);
   --color: rgb(255, 255, 255);
