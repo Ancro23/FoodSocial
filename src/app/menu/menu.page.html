@@ -2,7 +2,7 @@
   <ion-menu contentId="content">
 <ion-header>
   <ion-toolbar>
-<ion-title>menu</ion-title>
+<ion-title>Menu</ion-title>
 <ion-buttons slot="end">
   <ion-button (click)="closemenu()">
     <ion-icon name="arrow-back-outline"></ion-icon>
@@ -14,7 +14,15 @@
   <ion-item (click)="log_out()">
     <ion-icon name="log-out-outline"></ion-icon>Salir
   </ion-item>
-  <!--Contenido de mi menu-->
+  <ion-item (click)="buscarUsuario()">
+    <ion-icon name="search-outline"></ion-icon>Buscar Usuario
+  </ion-item>
+  <ion-item (click)="PerfilUsuario()">
+    <ion-icon name="person-outline"></ion-icon>Ir al Perfil
+  </ion-item>
+  <ion-item (click)="Home()">
+    <ion-icon name="home-outline"></ion-icon>Home
+  </ion-item>
   
 </ion-content>
   </ion-menu>

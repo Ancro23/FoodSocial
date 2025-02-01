@@ -5,23 +5,27 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="addPostForm"(ngSubmit)="addPost(addPostForm.value)">
-  <div (click)="uploadPhone()">
-    <img [src]="post_image ? post_image : 'assets/images/place_holder.png'" />
-<p *ngIf="!post_image">haz click para subir una imagen></p>
+  <form [formGroup]="addPostForm" (ngSubmit)="addPost(addPostForm.value)">
+    <div (click)="presentPhotoOptions()">
+      <img [src]="post_image ? post_image : 'assets/images/place_holder.png'" />
+      <p *ngIf="!post_image">haz click para subir una imagen</p>
 
-  </div>
+    </div>
 
 
-  <ion-item>
-  <ion-textarea label="Descripcion del post" labelPlacement="floating" placeholder="Cuenta lo que estas pensando" formControlName="description"></ion-textarea>
-</ion-item>
+    <ion-item>
+      <ion-textarea label="Descripcion del post" labelPlacement="floating" placeholder="Cuenta lo que estas pensando"
+        formControlName="description"></ion-textarea>
+    </ion-item>
 
-<ion-footer>
-  <ion-button type="submit"
-  [disabled]="!addPostForm.value"
-  expand="full"
-  >Publicar</ion-button>
-</ion-footer>
- </form>
+    <ion-footer>
+      <ion-button type="submit" [disabled]="!addPostForm.value" expand="full">Publicar</ion-button>
+      <ion-button (click)="cerrar()" expand="full">Cerrar</ion-button>
+
+    </ion-footer>
+
+
+
+
+  </form>
 </ion-content>

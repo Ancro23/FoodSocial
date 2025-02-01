@@ -1,0 +1,112 @@
+/* Estilo general */
+ion-content {
+    --background: #0d0d0d; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Estilo para la barra de herramientas */
+  ion-toolbar {
+    --background: #1a1a2e;
+    --color: #00ffea; /* Color cian neón */
+    text-align: center;
+  }
+  
+  /* Avatar */
+  ion-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border: 3px solid #00ffea;
+    box-shadow: 0 0 10px #00ffea;
+  }
+  
+  ion-avatar img {
+    border-radius: 50%;
+  }
+  
+  /* Formulario */
+  form {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 234, 0.5);
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Campos de entrada */
+  ion-item {
+    --background: transparent;
+    --color: white;
+    border-bottom: 2px solid #00ffea;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilos para las etiquetas flotantes */
+  ion-input {
+    --placeholder-color: rgba(255, 255, 255, 0.6);
+    --color: white;
+  }
+  
+  ion-input::part(native) {
+    font-size: 16px;
+  }
+  
+  /* Botón de Login */
+  ion-button[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+    --background: linear-gradient(90deg, #00ffea, #ff00ff);
+    --color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #00ffea;
+    transition: 0.3s ease;
+  }
+  
+  ion-button[type="submit"]:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 20px #ff00ff;
+  }
+  
+  /* Botón de Registro */
+  ion-button[color="secondary"] {
+    width: 100%;
+    margin-top: 10px;
+    --background: linear-gradient(90deg, #ff00ff, #00ffea);
+    --color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #ff00ff;
+    transition: 0.3s ease;
+  }
+  
+  ion-button[color="secondary"]:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 20px #00ffea;
+  }
+  
+  /* Mensajes de error */
+  ion-label[color="danger"] {
+    font-size: 14px;
+    color: #ff4444;
+    text-shadow: 0 0 5px red;
+  }
+  
+  /* Mensaje de error general */
+  p {
+    color: #ff4444;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+  }

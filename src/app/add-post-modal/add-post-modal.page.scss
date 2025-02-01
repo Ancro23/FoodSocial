@@ -1,0 +1,85 @@
+
+*{
+    background-color: #000000;
+}
+/* Estilo general del contenido */
+ion-content {
+    --background: #111; /* Fondo oscuro */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 15px;
+  }
+  
+  /* Estilo del encabezado */
+  ion-toolbar {
+    --background: rgb(0, 0, 0);
+    --color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-bottom: 2px solid #000000;
+    text-align: center;
+  }
+  
+  /* Imagen de subida */
+  div {
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px dashed #000000;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  div:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+  
+  /* Placeholder de imagen */
+  img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Texto bajo la imagen */
+  p {
+    font-size: 16px;
+    color: #00ffea;
+    font-style: italic;
+  }
+  
+  /* Estilos del textarea */
+  ion-textarea {
+    --background: rgb(0, 0, 0);
+    --color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 900px;
+  }
+  
+  /* Botones */
+  ion-button {
+    --background: #00ffea;
+    --color: #111;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  
+  ion-button:hover {
+    --background: #000000;
+    transform: scale(1.05);
+  }
+  
+  /* Botón de cerrar */
+  ion-button:nth-child(2) {
+    --background: #ff4d4d;
+  }
+  
+  ion-button:nth-child(2):hover {
+    --background: #ff0000;
+  }
+  

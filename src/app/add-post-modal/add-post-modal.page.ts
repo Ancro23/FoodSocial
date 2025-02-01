@@ -4,7 +4,8 @@ import { defineCustomElements} from '@ionic/pwa-elements/loader';
 import { FormBuilder, FormGroup,FormControl,Validators } from '@angular/forms';
 import { PostService } from '../services/post.service';
 import { Storage } from '@ionic/storage-angular';
-import { ModalController } from '@ionic/angular';
+import { ModalController,AlertController } from '@ionic/angular';
+
 defineCustomElements(window);
 @Component({
   selector: 'app-add-post-modal',
@@ -20,7 +21,8 @@ export class AddPostModalPage implements OnInit {
     private formBuilder: FormBuilder,
     private postService: PostService,
     private storage:Storage,
-    private modalController:ModalController
+    private modalController:ModalController,
+    private alertcontroller:AlertController
   ) {
     this.addPostForm = this.formBuilder.group({
       description: new FormControl('', Validators.required),
@@ -76,5 +78,48 @@ this.modalController.dismiss();
           console.log(error,'error');
         }
     );
+  }
+  async takePhoto(source: CameraSource) {
+    console.log('take Photo');
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.DataUrl,
+      source: source,
+      quality: 100
+    });
+
+    console.log(capturedPhoto.dataUrl);
+    this.post_image = capturedPhoto.dataUrl;
+    this.addPostForm.patchValue({image:this.post_image});
+  }
+  async presentPhotoOptions(){
+    const alert = await this.alertcontroller.create({
+      header: "Seleccionar una opcion",
+      message:"¿De donde Desea obtener la imagen",
+      buttons:[
+        {
+          text:"camera",
+          handler:() => {
+            this.takePhoto(CameraSource.Camera);
+          }
+        },
+        {
+          text:"Galeria",
+          handler: () => {
+            this.takePhoto(CameraSource.Photos);
+          }
+        },
+        {
+          text:"Cancelar",
+          role:"cancel",
+          handler:() => {
+            console.log('Cancelado');
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+  cerrar(){
+  this.modalController.dismiss({null: null});
   }
 }

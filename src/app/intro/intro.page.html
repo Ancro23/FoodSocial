@@ -1,27 +1,43 @@
-<ion-content>
-  <swiper-container navigation="true" pagination="true" scrollbar="true">
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Bienvenido a GameHub</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="game-content">
+  <swiper-container navigation="true" pagination="true" scrollbar="true" class="swiper-container">
     <swiper-slide>
-      <h1 class="title">Bienvenido al Games Hub </h1>
-      <img src="../../assets/images/videogame.jpg" alt="">
-      
-      <p>Aqui conoceras y aprenderas muchas cosas relacionada a videojuegos</p>
+      <div class="slide-content">
+        <ion-img src="assets/images/game1.png" alt="Game Image 1"></ion-img>
+        <h2 class="slide-title">¡Explora Mundos Virtuales!</h2>
+        <p>Sumérgete en aventuras épicas y descubre mundos inexplorados. ¿Estás listo para la aventura?</p>
+      </div>
     </swiper-slide>
+
     <swiper-slide>
-      <h1 class="title">Interactua y aprende</h1>
-      <ion-icon name="cart-outline"></ion-icon>
-      <p>hola soy el slide 2</p>
-    </swiper-slide>   
-    <swiper-slide>
-      <h1 class="title">Hola slide 3</h1>
-      <ion-icon name="fish-outline"></ion-icon>
-      <p>hola soy el slide 3</p>
+      <div class="slide-content">
+        <ion-img src="assets/images/image2.jpg" alt="Game Image 2"></ion-img>
+        <h2 class="slide-title">¡Compite con tus Amigos!</h2>
+        <p>Enfréntate a tus amigos en desafíos increíbles y demuestra que eres el mejor.</p>
+      </div>
     </swiper-slide>
+
     <swiper-slide>
-      <ion-icon name="close" class="close-icon" (click)="finish()"></ion-icon>
-      <h1 class="title">Hola slide 4</h1>
-      <img src="../../assets/images/cocina.jpg" alt="">
-      <ion-icon name="cafe-outline"></ion-icon>
-      <p>hola soy el slide 1</p>
+      <div class="slide-content">
+        <ion-img src="assets/images/JUEGOS_XBOX.jpg" alt="Game Image 3"></ion-img>
+        <h2 class="slide-title">¡Descubre Trucos y Consejos!</h2>
+        <p>Aprende estrategias secretas y conviértete en un experto en tus juegos favoritos.</p>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="slide-content">
+        <ion-icon name="close" class="close-icon" (click)="finish()"></ion-icon>
+        <ion-img src="assets/images/juegos3.jpg.webp" alt="Game Image 4"></ion-img>
+        <h2 class="slide-title">¡Únete a la Comunidad de Jugadores!</h2>
+        <p>Conéctate con otros jugadores, comparte tus experiencias y haz nuevos amigos.</p>
+      </div>
     </swiper-slide>
   </swiper-container>
 </ion-content>
+

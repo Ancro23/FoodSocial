@@ -1,24 +1,51 @@
-swiper-container {
-    width: 100%;
-    height: 100%;
-  }
-  
-  swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(65, 249, 255);
-    
-  }
-  
-  .title{
-    color: rgb(80, 64, 64);
-  }
-  .close-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 35px;
-    color: white;
+.game-content {
+  --background: #1a1a1a; /* Fondo oscuro para un estilo gamer */
+  padding: 0;
+}
+ion-toolbar {
+  --background: rgb(0, 0, 0);
+  --color:#00ffea;
+  font-weight: bold;
+  border-bottom: 2px solid #000000;
+  text-align: center;
+}
+.swiper-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-content {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.slide-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+ion-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+ion-icon.close-icon {
+  font-size: 2rem;
+  color: #ff6347;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }

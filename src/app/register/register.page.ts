@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators, RequiredValidator} from '@angular/forms'
 import { AuthService } from '../services/auth.service';
 import { NavController } from '@ionic/angular';
+import { ModalController,AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -11,6 +12,7 @@ import { NavController } from '@ionic/angular';
 export class RegisterPage implements OnInit {
 registerForm: FormGroup;
 errorMessage:any;
+
 formErrors = {
   email: [
   
@@ -40,7 +42,9 @@ formErrors = {
   constructor( 
 private formBuielder: FormBuilder,
 private authServices: AuthService,
-private navCtrl:NavController
+private navCtrl:NavController,
+private modalController:ModalController,
+private alertcontroller:AlertController
 
 ){
   this.registerForm = this.formBuielder.group({
@@ -92,5 +96,8 @@ private navCtrl:NavController
       }
     };
   }
+  cerrar(){
+    this.navCtrl.navigateBack('/login');
+    }
 }
 

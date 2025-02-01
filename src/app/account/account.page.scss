@@ -1,0 +1,103 @@
+/* Estilos generales */
+ion-content {
+    --background: #0b0b0f; /* Fondo oscuro */
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  ion-toolbar {
+    --background: #1a1a2e;
+    --color: #00ffea;
+    border-bottom: 2px solid #00ffea;
+  }
+
+  .profile-container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 234, 0.5);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 20px #ff00ff;
+  }
+  
+  /* Avatar */
+  ion-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ff00ff;
+    box-shadow: 0 0 15px #ff00ff;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin: 20px auto;
+  }
+  
+  ion-avatar:hover {
+    box-shadow: 0 0 25px #00ffea;
+  }
+  
+  .image-post {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  /* Información del usuario */
+  h1 {
+    font-size: 22px;
+    color: #00ffea;
+    margin-top: 15px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 5px 0;
+  }
+  
+  /* Botones */
+  ion-button {
+    --background: linear-gradient(90deg, #00ffea, #ff00ff);
+    --color: white;
+    margin-top: 10px;
+    box-shadow: 0px 0px 10px #00ffea;
+    transition: 0.3s ease;
+  }
+  
+  ion-button:hover {
+    box-shadow: 0px 0px 20px #ff00ff;
+  }
+  
+  /* Formulario de edición */
+  form {
+    margin-top: 20px;
+  }
+  
+  ion-item {
+    --background: rgba(255, 255, 255, 0.1);
+    --color: white;
+    border-radius: 10px;
+    margin: 10px 0;
+  }
+  
+  /* Botón de cancelar */
+  ion-button[color="medium"] {
+    --background: #444;
+    --color: white;
+  }
+  
+  ion-button[color="medium"]:hover {
+    box-shadow: 0px 0px 15px #666;
+  }

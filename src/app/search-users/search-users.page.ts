@@ -69,36 +69,30 @@ export class SearchUsersPage implements OnInit {
 
 
   }
-  follow(user_id: any) {
-    console.log('follow', user_id);
-    const followee_id = this.current_user.id;
-    this.userService.followUser( user_id,followee_id).then(
+  follow(followee_id: any){
+    console.log('follow', followee_id);
+    const user_id = this.current_user.id;
+    this.userService.followUser(user_id, followee_id).then(
       (data: any) => {
-       console.log(data);
-      this.users = this.users.map((user: any)=>{
-        if( user.id == user_id){
-          return {
-            ...user,
-            is_following: true
+        console.log(data);
+        this.users = this.users.map((user: any) => {
+          if (user.id == followee_id){
+            return {
+              ...user,
+              is_following: true
+            }
           }
-        }
-        return  user;
-      });
-
-
+          return user;
+        });
       }
-
     ).catch(
       (error) => {
         console.log(error);
-      }
-    );
-
+      });
   }
-
-  unfollow(user_id: any) {
-    console.log('unfollow', user_id);
-    const followee_id = this.current_user.id; 
+  unfollow(followee_id: any) {
+    console.log('unfollow', followee_id);
+    const user_id = this.current_user.id; 
   
     this.userService.unfollowUser(user_id, followee_id).then(
       (data: any) => {
@@ -106,7 +100,7 @@ export class SearchUsersPage implements OnInit {
   
     
         this.users = this.users.map((user: any) => {
-          if (user.id === user_id) {
+          if (user.id === followee_id) {
             return { ...user, is_following: false };
           }
           return user;
